@@ -8,6 +8,7 @@ class Connection
             $db = "highland_books_database";
             $user = "JamieUser";
             $password = "Jamie1";
+            
         }
 }
  ?>
