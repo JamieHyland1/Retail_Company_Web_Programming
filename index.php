@@ -34,6 +34,15 @@ function echoSelectedArray($array, $fieldName, $value) {
         echo 'selected="selected"';
     }
 }
+
+if(!isset($form_data))
+{
+    $form_data = array();
+}
+if(!isset($errors))
+{
+    $errors = array();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,7 +64,9 @@ function echoSelectedArray($array, $fieldName, $value) {
                             <input type="text" id="UserName" name="UserName" value="<?php echoValue($form_data, 'UserName') ?>"> 
                         </div>
                     <div class="error">
-                        <span id="UserNameError"></span>
+                        <span id="UserNameError">
+                            <?php if(isset($errors['UserName'])) echo $errors['UserName']; ?>
+                        </span>
                     </div>
                 </div>
                 <br>
@@ -67,7 +78,9 @@ function echoSelectedArray($array, $fieldName, $value) {
                             <input type="password" id="Password" name="Password" > 
                         </div>
                     <div class="error">
-                        <span id="Password"></span>
+                        <span id="Password">
+                            <?php if(isset($errors['Password'])) echo $errors['Password']; ?>
+                        </span>
                     </div>
                 <br>
                 <div class="row">
@@ -106,7 +119,9 @@ function echoSelectedArray($array, $fieldName, $value) {
                         <input type="text" name="mail" id="mail" value="<?php echoValue($form_data, 'mail')?>">
                     </div>
                     <div class="error">
-                        <span id="mailError"></span>
+                        <span id="mailError">
+                            <?php if(isset($errors['mail'])) echo $errors['mail']; ?>
+                        </span>
                     </div>
                 </div>
                 <br>
@@ -118,7 +133,9 @@ function echoSelectedArray($array, $fieldName, $value) {
                     <input type="number" name="phone" id="phone" value="phoneNumber"><br> 
                     </div>
                     <div class="error">
-                        <span id="phoneError"></span>
+                        <span id="phoneError">
+                            <?php if(isset($errors['phone'])) echo $errors['phone']; ?>
+                        </span>
                     </div>
                 </div>
                 <br>
@@ -130,7 +147,9 @@ function echoSelectedArray($array, $fieldName, $value) {
                         <input type="date" name="date" id="date" value="<?php echoValue($form_data, 'date')?>"><br>
                     </div>
                     <div class="error">
-                        <span id="dateError"></span>
+                        <span id="dateError">
+                            <?php if(isset($errors['date'])) echo $errors['date']; ?>
+                        </span>
                     </div>
                 </div>
                 <br>
@@ -142,7 +161,9 @@ function echoSelectedArray($array, $fieldName, $value) {
                         <input type="text" name="location" id="loaction" value="<?php echoValue($form_data, 'location')?>">
                     </div>
                     <div class="error">
-                        <span id="locationError"></span>
+                        <span id="locationError">
+                            <?php if(isset($errors['location'])) echo $errors['location']; ?>
+                        </span>
                     </div>
                 </div>
                 <br>
