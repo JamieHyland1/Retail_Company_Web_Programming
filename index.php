@@ -40,6 +40,7 @@ function echoSelectedArray($array, $fieldName, $value) {
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <script src="Validate.js"></script>
     </head>
     <body>
         <h1>Enter a new Product Category Manager</h1>
@@ -51,7 +52,7 @@ function echoSelectedArray($array, $fieldName, $value) {
                         <label for="UserName">UserName</label>
                     </div>
                         <div class="control">
-                            <input type="text" name="UserName"> 
+                            <input type="text" id="UserName" name="UserName" value="<?php echoValue($form_data, 'UserName') ?>"> 
                         </div>
                     <div class="error">
                         <span id="UserNameError"></span>
@@ -63,7 +64,7 @@ function echoSelectedArray($array, $fieldName, $value) {
                         <label for="Password">Password</label>
                     </div>
                         <div class="control">
-                            <input type="password" name="Password"> 
+                            <input type="password" id="Password" name="Password" > 
                         </div>
                     <div class="error">
                         <span id="Password"></span>
@@ -102,7 +103,7 @@ function echoSelectedArray($array, $fieldName, $value) {
                         <label for="mail">E-mail:</label>
                     </div>
                     <div class="control">
-                        <input type="text" name="mail" id="mail" value="your email">
+                        <input type="text" name="mail" id="mail" value="<?php echoValue($form_data, 'mail')?>">
                     </div>
                     <div class="error">
                         <span id="mailError"></span>
@@ -126,7 +127,7 @@ function echoSelectedArray($array, $fieldName, $value) {
                         <label for="date">Date appointed:</label>
                     </div>
                     <div class="control">
-                        <input type="date" name="date" id="date"><br>
+                        <input type="date" name="date" id="date" value="<?php echoValue($form_data, 'date')?>"><br>
                     </div>
                     <div class="error">
                         <span id="dateError"></span>
@@ -138,7 +139,7 @@ function echoSelectedArray($array, $fieldName, $value) {
                         <label for="location">Store Location:</label>
                     </div>
                     <div class="control">
-                        <input type="text" name="location" id="loaction">
+                        <input type="text" name="location" id="loaction" value="<?php echoValue($form_data, 'location')?>">
                     </div>
                     <div class="error">
                         <span id="locationError"></span>

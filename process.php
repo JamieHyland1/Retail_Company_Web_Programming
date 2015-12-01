@@ -52,19 +52,19 @@
                 {
                     $errors["location"] = "Location is required";
                 }
-//                if(empty($errors))
-//                {
-//                    require 'response.php';
-//                }
-//                else 
-//                {
-//                    require 'index.php';
-//                   
-//               }
+                if(empty($errors))
+                {
+                    require 'response.php';
+                }
+                else 
+                {
+                    require 'index.php';
+                   
+               }
                
                 
-                print_r($errors);
-                print_r($_GET);
+//                print_r($errors);
+//                print_r($_GET);
             ?>
         </pre>
     </body>

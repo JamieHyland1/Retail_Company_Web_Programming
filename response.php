@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-
+<html>
 </head>
     <body>
         <div class="container">
@@ -12,7 +12,7 @@
                     <label>Username</label>
                 </div>
                 <div class="control">
-                    <?php echo $formdata["UserName"]; ?>
+                    <?php echo $form_data["UserName"]; ?>
                 </div>
             </div>
             <div class="row">
@@ -20,7 +20,7 @@
                     <label>Password</label>
                 </div>
                 <div class="control">
-                    <?php echo $formdata["Password"] ; ?>
+                    <?php echo $form_data["Password"] ; ?>
                 </div>
             </div>
             <div class="row">
@@ -28,7 +28,7 @@
                     <label>Email</label>
                 </div>
                 <div class="control">
-                    <?php echo $formdata['mail']; ?>
+                    <?php echo $form_data['mail']; ?>
                 </div>
             </div>
            
@@ -39,7 +39,7 @@
                     <label>Phone Number</label>
                 </div>
                 <div class="control">
-                    <?php echo $formdata['$phone']; ?>
+                    <?php echo $form_data['$phone']; ?>
                 </div>
             </div>
             
@@ -49,7 +49,7 @@
                     <label>Comments</label>
                 </div>
                 <div class="control">
-                    <?php echo $formdata['location']; ?>
+                    <?php echo $form_data['location']; ?>
                 </div>
             </div>
             <div class="row">
@@ -57,7 +57,7 @@
                     <label>Profile Picture</label>
                 </div>
                 <div class="control">
-                    <?php echo $formdata['picture']; ?>
+                    <?php echo $form_data['picture']; ?>
                 </div>
             </div>
         </div>
