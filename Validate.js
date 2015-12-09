@@ -7,8 +7,9 @@ window.onload = function ()
     }
     function isValidDateFormat(date)
     {
-        var re = /^d{2}\/\d{2}\/\d{4}$/;
+        var re = /\d{4}-\d{2}-\d{2}/;
         return re.test(date);
+        
     }
     function isDate(date)
     {
@@ -20,7 +21,7 @@ window.onload = function ()
         var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         
         //adjusting for leap years
-        if(year%400 == 0 ||(year%100 != 0 && year%4 === 0))
+        if(year%400 === 0 ||(year%100 !== 0 && year%4 === 0))
         {
             monthLength[1] = 29;
         }
@@ -36,7 +37,7 @@ window.onload = function ()
     }
 
 
-    var submitBtn = document.getElementsByID('submit');
+    var submitBtn = document.getElementById('submit');
     
     submitBtn.addEventListener('click', function(event)
     { 
@@ -45,12 +46,12 @@ window.onload = function ()
                           
          //Getting reference to element errors
          //=====================================================================
-        var userNameErrorElement = document.getElemenByID("UserNameError");
-        var passwordErrorElement = document.getElemenByID("Password"); 
-        var mailErrorElement = document.getElemenByID("mailError");    
-        var phoneErrorElement = document.getElemenByID("PhoneError");         
-        var dateErrorElement = document.getElemenByID("DateError");         
-        var locationErrorElement = document.getElemenByID("locationError");         
+        var userNameErrorElement = document.getElementById("UserNameError");
+        var passwordErrorElement = document.getElementById("PasswordError"); 
+        var mailErrorElement = document.getElementById("mailError");    
+        var phoneErrorElement = document.getElementById("phoneError");         
+        var dateErrorElement = document.getElementById("dateError");         
+        var locationErrorElement = document.getElementById("locationError");         
          //=====================================================================
 
          //clearing any errors from previous form submission
@@ -66,15 +67,15 @@ window.onload = function ()
          //getting references to my input fields
          //=====================================================================
          
-         var userNameField = document.getElementByID('UserName');
-         var passwordField = document.getElementByID('password');
-         var mailField = document.getElementByID('mail');
-         var phoneField = document.getElementByID('phone');
-         var dateField = document.getElementByID('date');
-         var locationField = document.getElementByID('location');
+         var userNameField = document.getElementById('UserName');
+         var passwordField = document.getElementById('Password');
+         var mailField = document.getElementById('mail');
+         var phoneField = document.getElementById('phone');
+         var dateField = document.getElementById('date');
+         var locationField = document.getElementById('location');
          //=====================================================================
          
-         //getting the values in input(text elements
+         //getting the values in input(text elements)
          //=====================================================================
          
          var username = userNameField.value;
@@ -88,22 +89,22 @@ window.onload = function ()
          
          //making sure username is a required field
          //=====================================================================
-         if(username == "")
+         if(username === "")
          {
              userNameErrorElement.innerHTML = "UserName is required";
              valid = false;
          }
-         if(password == "")
+         if(password === "")
          {
              passwordErrorElement.innerHTML = "Password is required";
              valid = false;
          }
-         if(mail == "" && !isvalidEmailFormat(mail))
+         if(mail === "" && !isValidEmailFormat(mail))
          {
              mailErrorElement.innerHTML = "E-mail is required";
              valid = false;
          }
-         if(phone == "" && !isNumber(phone))
+         if(phone === "" && !isNumber(phone))
          {
              phoneErrorElement.innerHTML = "Phone number must be a number";
              valid = false;
@@ -117,30 +118,23 @@ window.onload = function ()
                  valid = false;
              }
          }
-         if(date == "" && isvalidDateFormat(date))
+         if(date !== "" && !isValidDateFormat(date))
          {
              dateErrorElement.innerHTML = "A date is required in the form dd/mm/yyyy";
              valid = false;
          }
-         else if (date != "" && !isvalidDateFormat(date))
+         else if (date === "")
          {
              dateErrorElement.innerHTML = "A date is required";
+             valid = false;
          }
-         if(location == "")
+         if(location === "")
          {
              locationErrorElement.innerHTML = "A store location is required";
              valid = false;
          }
          //=====================================================================
 
-
-        
-        
-        
-        
-        
-        
-        
         
         
         

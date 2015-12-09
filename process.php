@@ -3,9 +3,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+                <link rel="stylesheet" type="text/css" href="960.css">
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<link rel="stylesheet" type="text/css" href="text.css">
+		<link rel="stylesheet" type="text/css" href="style.css"> 
     </head>
     <body>
+        <div class="container_12">
         <pre>
             
             <?php   
@@ -67,5 +71,6 @@
 //                print_r($_GET);
             ?>
         </pre>
+        </div>
     </body>
 </html>
