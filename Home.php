@@ -7,7 +7,7 @@
         
         $gateway = new TableGateway($Connection);
         
-        $statement = $gateway->getBooks();
+        $statement = $gateway->getCategory();
         
         
         ?>
@@ -24,32 +24,36 @@
     <body>
 
     </body>
-        <table>
-            <thead
+    <table>
+            <thead>
                 <tr>
-                    <th>Book ID</th>
-                    <th>Author Name</th>
-                    <th>Book Title</th>
-                    <th>Cost Price</th>
-                    <th>Sell Price</th>
+           <!-- giving each table row its respective table header -->
+                    <th>ID</th>
+                    <th>Category Manager</th>
+                    <th>email Address</th>
+                    <th>manager Phone Number</th>
+                    <th>Manager Date</th>
+                    <th>Location</th>
                 <tr>
             </thead>
             <tbody>
                 <?php
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
-                while($row)
+                while($row) //a while loop that prints out each row of data for each table in the database
                 {
-                     echo '<tr>';
-                    echo '<td>' . $row['ProductID'] . '</td>';
-                    echo '<td>' . $row['AuthorName'] . '</td>';
-                    echo '<td>' . $row['BookName'] . '</td>';
-                    echo '<td>' . $row['CostPrice'] . '</td>';
-                    echo '<td>' . $row['sellPrice'] . '</td>';
+                    //displays the value of each respective row for each respective table column
+                    echo '<tr>';   
+                    echo '<td>' . $row['ID'] . '</td>';  
+                    echo '<td>' . $row['categoryManager'] . '</td>';
+                    echo '<td>' . $row['emailAddress'] . '</td>';
+                    echo '<td>' . $row['managerPhoneNum'] . '</td>';
+                    echo '<td>' . $row['managerDateAppointed'] . '</td>';
+                    echo '<td>' . $row['managerLocation'] . '</td>';
                     echo '<td>';
                     echo '<td>'
-                    . '<a href="viewBooks.php?id='.$row['ProductID'].'">View</a> '
-                    . '<a href="editProgrammerForm.php?id='.$row['ProductID'].'">Edit</a> '
-                    . '<a class="delete" href="deleteProgrammer.php?id='.$row['ProductID'].'">Delete</a> '
+                    . '<a href="viewManagers.php?id='.$row['ID'].'">View</a> ' //Lets the user view an individual Manager
+                    . '<a href="editManager.php?id='.$row['ID'].'">Edit</a> ' //Lets the user edit the selected Manager
+                    . '<a href="deleteManager.php?id='.$row['ID'].'">Delete</a> ' //Lets the user delete the respective Manager
                     . '</td>';
                     echo '</tr>';
                     
@@ -57,8 +61,10 @@
                 }
                 ?>
             </tbody>
-             <p><a href="createBookForm.php">Create Book</a></p>
-        </table>
+            
+    </table>
+     <p><a href="CreateCategoryManagerForm.php">Create Manager</a></p>
+        
     
     
 </html>

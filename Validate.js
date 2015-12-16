@@ -7,7 +7,8 @@ window.onload = function ()
     }
     function isValidDateFormat(date)
     {
-        var re = /\d{4}-\d{2}-\d{2}/;
+        var re = /\d{4}-\d{2}-\d{2}/; //makes sure the date is entered in the form YYYY/MM/DD 
+                                     //there were some errors with chrome going in the form DD/MM/YYYY
         return re.test(date);
         
     }

@@ -1,48 +1,11 @@
-<!DOCTYPE html>
+
 <?php
 
-function echoValue($array, $fieldName) {
-    if (isset($array) && isset($array[$fieldName])) {
-        echo $array[$fieldName];
-    }
-}
-
-function echoChecked($array, $fieldName, $value) {
-    if (isset($array[$fieldName]) && $array[$fieldName] == $value) {
-        echo 'checked="checked"';
-    }
-}
-
-function echoCheckedArray($array, $fieldName, $value) {
-    if (isset($array[$fieldName]) &&
-            is_array($array[$fieldName]) &&
-            in_array($value, $array[$fieldName])) {
-        echo 'checked="checked"';
-    }
-}
-
-function echoSelected($array, $fieldName, $value) {
-    if (isset($array[$fieldName]) && $array[$fieldName] == $value) {
-        echo 'selected="selected"';
-    }
-}
-
-function echoSelectedArray($array, $fieldName, $value) {
-    if (isset($array[$fieldName]) &&
-            is_array($array[$fieldName]) &&
-            in_array($value, $array[$fieldName])) {
-        echo 'selected="selected"';
-    }
-}
-
-if(!isset($form_data))
-{
-    $form_data = array();
-}
-if(!isset($errors))
-{
+require_once 'ValidateManager.php';
+if (!isset($errors)) {
     $errors = array();
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,13 +16,13 @@ if(!isset($errors))
                 <link rel="stylesheet" type="text/css" href="960.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
 
-        <script src="Validate.js"></script>
+ <script src="Validate.js"></script>
     </head>
     <body>
         <div class="container_12">
             <h1>Enter a new Product Category Manager</h1>
             <div id="container">
-                <form  action=""  method="get">
+                  <form action="createManager.php" method="POST">
 
                     <div class="row">
                         <div class="label">
@@ -99,22 +62,7 @@ if(!isset($errors))
                             <span id="pictureError"></span>
                         </div>
                     </div>
-    <!--                <div class="row">
-                        <div class="label">
-                            <label for="Product Category Manager">Product Category Manager</label>
-                        </div>
-                        <div class="control">
-                        <select name="Product Category Manager" id="Product Category Manager">
-                            <option value="John Doe">John Doe</option>
-                            <option value="Dave Mathews">Dave Mathews</option>
-                            <option value="Niall Ford">Niall Ford</option>
-                            <option value="Jamie Hyland">Jamie Hyland</option>
-                        </select>
-                        </div>
-                        <div class="error">
-                            <span id="ProductCatManagerError"></span>
-                        </div>
-                    </div>-->
+   
                     <br>
                     <div class="row">
                         <div class="label">
@@ -135,7 +83,7 @@ if(!isset($errors))
                             <label for="phone">Manager Phone Number:</label>    
                         </div>
                         <div class="control">
-                        <input type="number" name="phone" id="phone" value="phoneNumber"><br> 
+                        <input type="number" name="phone" id="phone" ><br> 
                         </div>
                         <div class="error">
                             <span id="phoneError">
@@ -149,7 +97,7 @@ if(!isset($errors))
                             <label for="date">Date appointed:</label>
                         </div>
                         <div class="control">
-                            <input type="date" name="date" id="date" value="<?php echoValue($form_data, 'date')?>"><br>
+                            <input type="date" name="date" id="date" value="<?php echoValue($form_data, 'managerDateAppointed')?>"><br>
                         </div>
                         <div class="error">
                             <span id="dateError">

@@ -7,6 +7,8 @@
         <link rel="stylesheet" type="text/css" href="960.css">
 	<link rel="stylesheet" type="text/css" href="style.css"> 
 </head>
+<!-- This page is only accessed when there are no validation errors in the code,
+     It will display all the user's info back to them -->
     <body>
         <div class="container_12">
             <pre>
@@ -18,7 +20,7 @@
                         <label>Username</label>
                     </div>
                     <div class="control">
-                        <?php echo $form_data["UserName"]; ?>
+                        <?php echo $form_data["UserName"]; ?> <!-- return the value from the filled in form_data array -->
                     </div>
                 </div>
                 <div class="row">
