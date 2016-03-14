@@ -1,0 +1,89 @@
+body
+{
+    background-image: url("../images/login.jpg");
+      color: #fff;
+    
+}
+.login
+{
+    
+}
+.title
+{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 52px;
+   
+}
+.light
+{
+    font-family: 'Raleway', sans-serif;
+   
+    font-weight: 300;
+}
+.quote
+{
+    font-family: 'Raleway', sans-serif;
+    font-size: 21px;
+}
+.regular
+{
+    font-family: 'Raleway', sans-serif;
+   
+    font-weight: 400;
+}
+.button
+{
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: crimson;
+    text-align: center;
+    text-decoration: none; 
+    list-style: none;
+    display: inline;
+    
+}
+p.link
+{
+    padding-top: 10px;
+}
+.sliding-u-r-l {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.sliding-u-r-l:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+
+.sliding-u-r-l:hover:after {
+    width: 100%;
+    background: white;
+}
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+
+  color: #ffffff;
+  font-size: 20px;
+  background: crimson;
+  padding: 5px 20px 10px 10px;
+  text-decoration: none;
+}
+
+/*
+.btn:hover {
+  background: red;
+  text-decoration: none;
+}*/

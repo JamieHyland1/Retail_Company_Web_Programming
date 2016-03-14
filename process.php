@@ -46,8 +46,8 @@
 			$form_data["phone"] !== FALSE &&
 			$form_data["phone"]  !== "")
                             {
-                                $phone = intval($form_data["phone"]);
-                                if (strlen($phone) <= 0 || strlen($phone) > 10)
+                                $sellPrice = intval($form_data["phone"]);
+                                if (strlen($sellPrice) <= 0 || strlen($sellPrice) > 10)
                                     {
                                         $errors['phone'] = "Phone number must be 0-9 characters long"; //Making sure the the phone number has to be 10 digits long 
                                     }

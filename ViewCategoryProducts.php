@@ -1,13 +1,13 @@
 <?php
 require_once 'Classes/Connection.php';
 require_once 'TableGateway.php';
-require_once 'Classes/productTable.php';
+require_once 'Classes/productTable';
 
+start_session();
 
-//
-//if (!is_logged_in()) {
-//    header("Location: login_form.php");
-//}
+if (!is_logged_in()) {
+    header("Location: login_form.php");
+}
 
 if (!isset($_GET) || !isset($_GET['id'])) {
     die('Invalid request');
@@ -66,7 +66,6 @@ $product = $productGateway->getProductsByCategoryID($id);
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Author Name</th>
                             <th>Book Title</th>
                             <th>Cost Price</th>
@@ -76,11 +75,11 @@ $product = $productGateway->getProductsByCategoryID($id);
                     </thead>
                     <tbody>
                         <?php
-                        $row = $product->fetch(PDO::FETCH_ASSOC);
+                        $row = $->fetch(PDO::FETCH_ASSOC);
                         while ($row) { //a while loop that prints out each row of data for each table in the database
                             //displays the value of each respective row for each respective table column
                             echo '<tr>';
-                            echo '<td>' . $row['ProductID'] . '</td>';
+                            echo '<td>' . $row['ID'] . '</td>';
                             echo '<td>' . $row['AuthorName'] . '</td>';
                             echo '<td>' . $row['BookName'] . '</td>';
                             echo '<td>' . $row['CostPrice'] . '</td>';
@@ -88,13 +87,13 @@ $product = $productGateway->getProductsByCategoryID($id);
                             echo '<td>' . $row['productCatID'] . '</td>';
                             echo '<td>';
                             echo '<td>'
-                            . '<a href="viewManagers.php?id=' . $row['ProductID'] . '">View</a> ' //Lets the user view an individual Manager
-                            . '<a href="Forms/editManagerForm.php?id=' . $row['ProductID'] . '">Edit</a> ' //Lets the user edit the selected Manager
-                            . '<a href="deleteManager.php?id=' . $row['ProductID'] . '">Delete</a> ' //Lets the user delete the respective Manager
+                            . '<a href="viewManagers.php?id=' . $row['ID'] . '">View</a> ' //Lets the user view an individual Manager
+                            . '<a href="Forms/editManagerForm.php?id=' . $row['ID'] . '">Edit</a> ' //Lets the user edit the selected Manager
+                            . '<a href="deleteManager.php?id=' . $row['ID'] . '">Delete</a> ' //Lets the user delete the respective Manager
                             . '</td>';
                             echo '</tr>';
 
-                            $row = $product->fetch(PDO::FETCH_ASSOC);
+                            $row = $statement->fetch(PDO::FETCH_ASSOC);
                         }
                         ?>
                     </tbody>

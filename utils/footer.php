@@ -1,0 +1,1 @@
+<h6>&copy; Highland, 2016</h6>

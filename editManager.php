@@ -5,25 +5,25 @@ require_once 'Connection.php'; //Connecting to the Connection class
  //=============================================================================
 //Gets the the values from the post array of the edit manager form
 $ID = $_GET['id'];
-$manager = $_POST['categoryManager'];
-$email = $_GET['emailAddress'];
-$phone = $_POST['phone'];
-$date = $_POST['date'];
-$location = $_POST['location'];
+$authorName = $_POST['categoryManager'];
+$bookName = $_GET['emailAddress'];
+$sellPrice = $_POST['phone'];
+$costPrice = $_POST['date'];
+$productCatID = $_POST['location'];
 //==============================================================================
  
      echo '<pre>';
      print_r($_POST);
      echo '</pre>';
 //Creates a new manager object to be passed into the databse
-$manager = new CatManager($ID, $manager, $email, $phone, $date, $location);
+$authorName = new CatManager($ID, $authorName, $bookName, $sellPrice, $costPrice, $productCatID);
 //as you're editing an already existing object in the database, the ID is required unlike the create form
 
 $connection = Connection::getInstance();
 
 $gateway = new TableGateway($connection);
 
-$gateway->update($manager);
+$gateway->update($authorName);
 
 header('location: Home.php');
 //returns to the home page and prevents multiple subimssions if the user reloads the page

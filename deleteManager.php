@@ -1,7 +1,7 @@
 <?php
 require_once 'CatManager.php';   //Connecting to the Manager class
 require_once 'TableGateway.php'; //Connecting to the TableGateway
-require_once 'Connection.php'; //Connecting to the Connection class
+require_once 'Classes/Connection.php'; //Connecting to the Connection class
 
 //==============================================================================
 //If there is no ID in the GET array then cancel the request

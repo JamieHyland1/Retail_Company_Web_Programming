@@ -65,6 +65,11 @@ class TableGateway
             "managerLocation"      => $m-> getLocation()
         );
         
+        echo "<pre>";
+        print_r($m);
+        print_r($params);
+        echo "</pre>";
+        
          $status = $statement->execute($params);
          
         if (!$status)
